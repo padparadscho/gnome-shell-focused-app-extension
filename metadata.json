@@ -1,0 +1,13 @@
+{
+  "name": "Focused App Extension",
+  "description": "Display the title and icon of the currently focused application in the top bar with quick access to window actions. Fully customizable with preferences for visibility, sizing, and behavior.",
+  "version": 1,
+  "uuid": "focused-app-extension@padparadscho.com",
+  "shell-version": ["46", "47", "48", "49"],
+  "url": "https://github.com/padparadscho/gnome-shell-focused-app-extension",
+  "settings-schema": "org.gnome.shell.extensions.focused-app-extension",
+  "gettext-domain": "focused-app-extension@padparadscho.com",
+  "donations": {
+    "github": "padparadscho"
+  }
+}

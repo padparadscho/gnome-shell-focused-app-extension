@@ -1,0 +1,8 @@
+.focused-app-box {
+  margin: 0 12px;
+  spacing: 12px;
+}
+
+.focused-app-label {
+  font-weight: bold;
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schemalist>
+    <schema path="/org/gnome/shell/extensions/focused-app-extension/" id="org.gnome.shell.extensions.focused-app-extension">
+        <key type="b" name="enable-focused-app-title">
+            <default>true</default>
+            <summary>Enable Focused App Title</summary>
+            <description>If enabled, the title of the currently focused application window will be displayed in the top bar.</description>
+        </key>
+
+        <key type="b" name="enable-focused-app-icon">
+            <default>true</default>
+            <summary>Enable Focused App Icon</summary>
+            <description>If enabled, the icon of the currently focused application window will be displayed in the top bar.</description>
+        </key>
+
+        <key type="b" name="enable-fixed-title-width">
+            <default>true</default>
+            <summary>Enable Fixed Title Width</summary>
+            <description>If enabled, the application title will have a fixed width, preventing it from resizing the top bar.</description>
+        </key>
+
+        <key type="b" name="enable-move-to-workspace">
+            <default>true</default>
+            <summary>Enable Move to New Workspace</summary>
+            <description>If enabled, show the 'Move to New Workspace' option in the menu to move the currently focused application window to a new workspace.</description>
+        </key>
+
+        <key type="b" name="enable-follow-to-workspace">
+            <default>true</default>
+            <summary>Enable Follow to Workspace</summary>
+            <description>If enabled, switch to the new workspace when moving a window.</description>
+        </key>
+
+        <key type="b" name="enable-take-screenshot">
+            <default>true</default>
+            <summary>Enable Take Screenshot</summary>
+            <description>If enabled, show the 'Take Screenshot' option in the menu to take a screenshot of the currently focused application window.</description>
+        </key>
+        
+        <key type="b" name="enable-app-settings">
+            <default>true</default>
+            <summary>Enable App Settings</summary>
+            <description>If enabled, show the 'App Settings' option in the menu to access the settings of the currently focused application window.</description>
+        </key>
+
+        <key type="i" name="focused-app-icon-size">
+            <default>16</default>
+            <summary>Focused App Icon Size</summary>
+            <description>Specifies the size of the application icon displayed in the top bar, in pixels.</description>
+        </key>
+
+        <key type="i" name="focused-app-title-width">
+            <default>20</default>
+            <summary>Focused App Title Width</summary>
+            <description>Specifies the width of the application title displayed in the top bar, in pixels.</description>
+        </key>
+    </schema>
+</schemalist>
