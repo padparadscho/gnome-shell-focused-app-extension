@@ -157,17 +157,7 @@ const FocusedAppIndicator = GObject.registerClass(
           _("Take Screenshot")
         );
         this._screenshotItem.connect("activate", () => {
-          // Try to use the modern interactive screenshot UI if available
-          if (Main.screenshotUI) {
-            Main.screenshotUI.open();
-          } else {
-            // Fallback to gnome-screenshot command
-            try {
-              Util.spawn(["gnome-screenshot", "-w"]);
-            } catch (e) {
-              log("Focused App Extension: Failed to take screenshot: " + e);
-            }
-          }
+          Main.screenshotUI.open();
         });
         this.menu.addMenuItem(this._screenshotItem);
       }
