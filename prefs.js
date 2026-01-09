@@ -49,6 +49,18 @@ export default class FocusedAppExtensionPreferences extends ExtensionPreferences
       Gio.SettingsBindFlags.DEFAULT
     );
 
+    const monochromeIconRow = new Adw.SwitchRow({
+      title: _("Enable Monochrome Icons"),
+      subtitle: _("Show a desaturated or symbolic version of the app icon"),
+    });
+    contentGroup.add(monochromeIconRow);
+    settings.bind(
+      "enable-monochrome-icon",
+      monochromeIconRow,
+      "active",
+      Gio.SettingsBindFlags.DEFAULT
+    );
+
     const focusedAppNameRow = new Adw.SwitchRow({
       title: _("Enable App Name Only"),
       subtitle: _('Show "Firefox" instead of the full window title'),

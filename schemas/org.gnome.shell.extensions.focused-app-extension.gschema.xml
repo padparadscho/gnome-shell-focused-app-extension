@@ -14,6 +14,12 @@
             <description>If enabled, the icon of the currently focused application window will be displayed in the top bar.</description>
         </key>
 
+        <key type="b" name="enable-monochrome-icon">
+            <default>false</default>
+            <summary>Enable Monochrome Icons</summary>
+            <description>If enabled, applies a desaturation effect or uses the symbolic variant of the application icon.</description>
+        </key>
+
         <key type="b" name="enable-fixed-title-width">
             <default>true</default>
             <summary>Enable Fixed Title Width</summary>

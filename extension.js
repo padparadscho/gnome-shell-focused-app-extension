@@ -1,5 +1,6 @@
 import Clutter from "gi://Clutter";
 import GObject from "gi://GObject";
+import Gio from "gi://Gio";
 import Shell from "gi://Shell";
 import St from "gi://St";
 import * as Main from "resource:///org/gnome/shell/ui/main.js";
@@ -58,6 +59,11 @@ const FocusedAppIndicator = GObject.registerClass(
       );
       this._settingsSignals.push(
         this._settings.connect("changed::enable-focused-app-icon", () =>
+          this._update()
+        )
+      );
+      this._settingsSignals.push(
+        this._settings.connect("changed::enable-monochrome-icon", () =>
           this._update()
         )
       );
@@ -236,7 +242,39 @@ const FocusedAppIndicator = GObject.registerClass(
       if (this._settings.get_boolean("enable-focused-app-icon")) {
         this._icon.show();
         if (app) {
-          this._icon.gicon = app.get_icon();
+          let icon = app.get_icon();
+          const useMonochrome = this._settings.get_boolean(
+            "enable-monochrome-icon"
+          );
+
+          if (useMonochrome) {
+            // Attempt to use symbolic icon
+            if (icon instanceof Gio.ThemedIcon) {
+              const names = icon.get_names();
+              const symbolicNames = [];
+              for (const name of names) {
+                if (!name.endsWith("-symbolic")) {
+                  symbolicNames.push(name + "-symbolic");
+                }
+              }
+              symbolicNames.push(...names);
+              icon = new Gio.ThemedIcon({ names: symbolicNames });
+            }
+
+            // Apply Desaturate Effect
+            if (!this._desaturateEffect) {
+              this._desaturateEffect = new Clutter.DesaturateEffect();
+              this._icon.add_effect(this._desaturateEffect);
+            }
+            this._desaturateEffect.enabled = true;
+          } else {
+            // Disable Desaturate Effect
+            if (this._desaturateEffect) {
+              this._desaturateEffect.enabled = false;
+            }
+          }
+
+          this._icon.gicon = icon;
         } else {
           this._icon.gicon = null;
         }
