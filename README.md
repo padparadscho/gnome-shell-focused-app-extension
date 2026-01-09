@@ -12,7 +12,7 @@ A GNOME Shell extension that displays the icon and title of the currently focuse
   - **Take Screenshot**: Captures the focused window using the native GNOME Shell UI or `gnome-screenshot`.
   - **App Settings**: Opens the focused application's page in GNOME Control Center.
   - **Close**: Closes the focused window.
-- Customizable display with options to toggle icon or title visibility, show app name only (e.g., "Firefox" instead of full window title), and configure icon size and title width with middle-ellipsization.
+- Customizable display with options to toggle icon or title visibility, enable monochrome icons (symbolic/desaturated), show app name only (e.g., "Firefox" instead of full window title), and configure icon size and title width with middle-ellipsization.
 
 ## Installation
 
